@@ -1,0 +1,33 @@
+Dicionario de datos:
+    - Personal: contén a información relativa a todos os traballadores da cadea hoteleira
+        + Id_personal: Identificador único de cada traballador
+        + Nombre
+        + Apellidos
+        + Puesto
+        + Salario
+
+    - Hotel: contén a información relativa a todos os hoteis da cadea hoteleira
+        + Id_hotel: Identificador único de cada hotel
+        + Director: Identificador único do traballador que dirixa o hotel
+        + Localización
+        + AforoMax
+        + Eventos: Indica se o hotel pode albergar eventos.
+
+    - Habitación: contén a información relativa a todas habitacións de todos os hoteis da cadea hoteleira
+        + Id_hotel: Identificador único de cada traballador
+        + TipoHabitación
+        + TipoBaño
+        + Cocina: Indica se a habitación ten cociña
+        + Id_hotel: Indentificador único do hotel ao que pertence a habitación
+
+    - Reserva: contén a información relativa a todos os reservas da cadea hoteleira
+        + Id_reserva: Identificador único de cada reserva
+        + Id_habitación
+        + FechaInicio
+        + FechaFin
+        + Regimen
+
+    - HorasTrabajadas
+        + Id_personal
+        + Id_hotel
+        + Horas: Horas trabajadas de un trabajador en un hotel.
