@@ -30,7 +30,7 @@ nombre_mujer = ["MARIA CARMEN", "MARIA", "CARMEN", "JOSEFA", "ANA MARIA",
             "JUANA", "SILVIA", "TERESA", "ENCARNACION", "IRENE", 
             "ALBA", "PATRICIA", "MONTSERRAT", "ANDREA", "ROCIO", 
             "ROSA", "MONICA", "MARIA MAR", "ALICIA", "ANGELA"]
-
+nombres = nombre_hombre+nombre_mujer
 lista_apellidos = ["GARCIA", "GONZALEZ", "RODRIGUEZ", "FERNANDEZ", "LOPEZ",
                 "MARTINEZ", "SANCHEZ", "PEREZ", "GOMEZ", "MARTIN",
                 "JIMENEZ", "RUIZ", "HERNANDEZ", "DIAZ", "MORENO",
@@ -47,9 +47,9 @@ lista_apellidos = ["GARCIA", "GONZALEZ", "RODRIGUEZ", "FERNANDEZ", "LOPEZ",
                 "HIDALGO", "GIMENEZ", "IBAÑEZ", "FERRER", "DURAN",
                 "SANTIAGO","BENITEZ", "MORA", "VICENTE", "VARGAS"]
 
-puesto = ["RECEPCIONISTA", "LIMPIEZA", "CAMARERO", "COCINERO", "CONSERJE", 
+puestos = ["RECEPCIONISTA", "LIMPIEZA", "CAMARERO", "COCINERO", "CONSERJE", 
         "SEGURIDAD","CONTABLE", "MARKETING", "COMPRAS", "EVENTOS"]
-pesos_puesto = [0.2, 0.1, 0.2, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05]
+pesos_puesto = [0.1, 0.2, 0.25, 0.05, 0.1, 0.05, 0.05, 0.05, 0.1, 0.05]
 
 localizacion = ["MADRID", "BARCELONA", "VALENCIA", "SEVILLA", "ALICANTE",
             "MALAGA", "MURCIA", "CADIZ", "VIZCAYA", "BALEARES", 
@@ -78,5 +78,20 @@ inicio = datetime(2017, 1, 30)
 final =  datetime(2017, 5, 28)
 
 random_date = inicio + (final - inicio) * random.random()
+aux_date= str(random_date.day),"-",str(random_date.month),"-",str(random_date.year)
+date= ''.join(aux_date)
+print(date)
 
-print(random_date.day,"-",random_date.month,"-",random_date.year)
+j=0
+while j<200:
+    nombre = np.random.choice(nombres)
+    apellido = np.random.choice(lista_apellidos)
+    aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
+    puesto = ''.join(aux_puesto)
+    salario = np.random.choice(salarios)
+    print(nombre,(15-len(nombre))*" ",
+        apellido,(15-len(apellido))*" ",
+        puesto,(15-len(puesto))*" ",
+        salario,(15-len(puesto))*" "
+        )
+    j+=1
