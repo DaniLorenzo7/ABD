@@ -14,7 +14,7 @@ Dicionario de datos:
         + Eventos: Indica se o hotel pode albergar eventos.
 
     - Habitación: contén a información relativa a todas habitacións de todos os hoteis da cadea hoteleira
-        + Id_hotel: Identificador único de cada traballador
+        + Id_habitación: Identificador único de cada habitación
         + TipoHabitación
         + TipoBaño
         + Cocina: Indica se a habitación ten cociña
