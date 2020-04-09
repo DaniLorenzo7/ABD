@@ -11,15 +11,14 @@ CREATE TABLE HOTEL
 localizacion VARCHAR2(20),
 aforoMax NUMBER(4),
 eventos VARCHAR2(30),
-director NUMBER(5),
-hotel_cf_director FOREIGN KEY (director) REFERENCES PERSONAL (id_personal));
+FOREIGN KEY (director) REFERENCES PERSONAL (id_personal));
 
 
 CREATE TABLE HORAS_TRABAJADAS
 (id_personal NOT NULL NUMBER(5),
 id_hotel NOT NULL NUMBER(4),
 horas NUMBER(10),
-horasTrabj_cp PRIMARY KEY (id_personal, id_hotel));
+PRIMARY KEY (id_personal, id_hotel));
 
 
 CREATE TABLE HABITACION
@@ -27,15 +26,14 @@ CREATE TABLE HABITACION
 tipoHab VARCHAR2(10),
 tipoBaño VARCHAR2(10),
 cocina VARCHAR2(2),
-id_hotel NUMBER(4),
-habit_cp_hotel FOREIGN KEY (id_hotel) REFERENCES HOTEL(id_hotel));
+FOREIGN KEY (id_hotel) REFERENCES HOTEL(id_hotel));
 
 
 CREATE TABLE RESERVA
 (id_reserva NUMBER(10),
-id_hab NUMBER(4),
+id_habitacion NUMBER(4),
 fechaInicio DATE,
 fechaFin DATE,
 regimen VARCHAR2(20),
-reserva_cp PRIMARY KEY (id_reserva),
-reserva_cf_habitFOREIGN KEY (id_hab) REFERENCES HABITACION(id_habitacion);
+PRIMARY KEY (id_reserva, id_habitacion));
+
