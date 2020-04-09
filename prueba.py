@@ -89,7 +89,7 @@ while j<200:
     aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
     puesto = ''.join(aux_puesto)
     salario = np.random.choice(salarios)
-    print(nombre,(15-len(nombre))*" ",
+    print(nombre,(20-len(nombre))*" ",
         apellido,(15-len(apellido))*" ",
         puesto,(15-len(puesto))*" ",
         salario,(15-len(puesto))*" "
