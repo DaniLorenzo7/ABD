@@ -1,6 +1,6 @@
 import numpy as np 
 import random
-from datetime import datetime
+import datetime
 
 i=900.00;
 salarios=[];
@@ -51,7 +51,7 @@ puestos = ["RECEPCIONISTA", "LIMPIEZA", "CAMARERO", "COCINERO", "CONSERJE",
         "SEGURIDAD","CONTABLE", "MARKETING", "COMPRAS", "EVENTOS"]
 pesos_puesto = [0.1, 0.2, 0.25, 0.05, 0.1, 0.05, 0.05, 0.05, 0.1, 0.05]
 
-localizacion = ["MADRID", "BARCELONA", "VALENCIA", "SEVILLA", "ALICANTE",
+localizaciones = ["MADRID", "BARCELONA", "VALENCIA", "SEVILLA", "ALICANTE",
             "MALAGA", "MURCIA", "CADIZ", "VIZCAYA", "BALEARES", 
             "LA CORUÑA", "LAS PALMAS", "ASTURIAS", "TENERIFE", "ZARAGOZA",  
             "PONTEVEDRA", "GRANADA", "TARRAGONA", "CORDOBA", "GERONA", 
@@ -64,34 +64,100 @@ localizacion = ["MADRID", "BARCELONA", "VALENCIA", "SEVILLA", "ALICANTE",
 
 aforo_max =[100,400]
 
-eventos=["SI", "NO"]
+eventos_cocina=["SI", "NO"]
 pesos_eventos=[0.3, 0.7]
 
-tipo_habitacion = ["INDIVIDUAL", "DOBLE", "TRIPLE", "TWIN", "SUITE"]
-pesos_tipo_habitacion = [0.3, 0.5, 0.05, 0.1, 0.05]
+pesos_cocina=[0.2,0.8]
+
+tipos_habitaciones = ["INDIVIDUAL", "DOBLE", "TRIPLE", "TWIN", "SUITE"]
+pesos_tipos_habitaciones = [0.3, 0.5, 0.05, 0.1, 0.05]
 
 
-tipo_baño = ["DUCHA", "BAÑERA", "JACUZZI"]
-pesos_tipo_baño = [0.45, 0.45, 0.1]
+tipos_baños = ["DUCHA", "BAÑERA", "JACUZZI"]
+pesos_tipos_baños = [0.45, 0.45, 0.1]
 
-inicio = datetime(2017, 1, 30)
-final =  datetime(2017, 5, 28)
+regimenes = ["ALOJAMIENTO", "DESAYUNO", "MEDIA PENSION", "PENSION COMPLETA", "TODO INCLUIDO" ]
+pesos_regimenes = [0.35, 0.35, 0.15, 0.1, 0.05]
+
+inicio = datetime.datetime(2017, 1, 1)
+final =  datetime.datetime(2020, 1, 1)
 
 random_date = inicio + (final - inicio) * random.random()
 aux_date= str(random_date.day),"-",str(random_date.month),"-",str(random_date.year)
 date= ''.join(aux_date)
-print(date)
 
 j=0
-while j<200:
-    nombre = np.random.choice(nombres)
-    apellido = np.random.choice(lista_apellidos)
-    aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
-    puesto = ''.join(aux_puesto)
-    salario = np.random.choice(salarios)
-    print(nombre,(20-len(nombre))*" ",
-        apellido,(15-len(apellido))*" ",
-        puesto,(15-len(puesto))*" ",
-        salario,(15-len(puesto))*" "
+
+################# PERSONAL #################
+# while j<200:
+#     nombre = np.random.choice(nombres)
+#     apellido = np.random.choice(lista_apellidos)
+#     aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
+#     puesto = ''.join(aux_puesto)
+#     salario = np.random.choice(salarios)
+#     
+#     print(nombre,(20-len(nombre))*" ",
+#         apellido,(15-len(apellido))*" ",
+#         puesto,(15-len(puesto))*" ",
+#         salario,(15-len(puesto))*" "
+#         )
+#
+#     j+=1
+
+
+
+################# HOTEL #################
+# while j<127:
+#     localizacion = np.random.choice(localizaciones)
+#     aux_aforo_max = random.randint(100,400)
+#     aforo_max = str(aux_aforo_max)
+#     aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
+#     evento = ''.join(aux_evento)
+
+#     print(localizacion,(20-len(localizacion))*" ",
+#         aforo_max,12*" ",
+#         evento,(15-len(evento))*" ",
+#         )
+
+#     j+=1
+
+
+
+################# HABITACION #################
+# while j<6000:
+#     aux_tipo_habitacion = random.choices(population=tipos_habitaciones, weights=pesos_tipos_habitaciones, k=1)
+#     tipo_habitacion = ''.join(aux_tipo_habitacion)
+#     aux_tipo_baño = random.choices(population=tipos_baños, weights=pesos_tipos_baños, k=1)
+#     tipo_baño = ''.join(aux_tipo_baño)
+#     aux_cocina = random.choices(population=eventos_cocina, weights=pesos_cocina, k=1)
+#     cocina = ''.join(aux_cocina)
+
+#     print(tipo_habitacion,(15-len(tipo_habitacion))*" ",
+#         tipo_baño,(10-len(tipo_baño))*" ",
+#         cocina,12*" ",
+#         )
+
+#     j+=1
+
+
+################# RESERVA #################
+while j<12000:
+    aux_fecha_inicio = inicio + (final - inicio) * random.random()
+    aux_fecha_inicio_1= str(aux_fecha_inicio.day),"-",str(aux_fecha_inicio.month),"-",str(aux_fecha_inicio.year)
+    fecha_inicio= ''.join(aux_fecha_inicio_1)
+
+    duracion= random.randint(1,15)
+
+    aux_fecha_fin = aux_fecha_inicio + datetime.timedelta(days=duracion)
+    aux_fecha_fin_1= str(aux_fecha_fin.day),"-",str(aux_fecha_fin.month),"-",str(aux_fecha_fin.year)
+    fecha_fin= ''.join(aux_fecha_fin_1)
+
+    aux_regimen = random.choices(population=regimenes, weights=pesos_regimenes, k=1)
+    regimen = ''.join(aux_regimen)
+
+    print(fecha_inicio,(15-len(fecha_inicio))*" ",
+        fecha_fin,(15-len(fecha_fin))*" ",
+        regimen,(15-len(regimen))*" ",
         )
+
     j+=1
