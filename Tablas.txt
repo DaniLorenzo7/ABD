@@ -1,16 +1,16 @@
 CREATE TABLE PERSONAL
 (id_personal NUMBER(5) CONSTRAINT personal_cp PRIMARY KEY,
-nombre VARCHAR2(10),
-apellidos VARCHAR2(30),
-puesto VARCHAR2(9),
+nombre VARCHAR2(25),
+apellidos VARCHAR2(50),
+puesto VARCHAR2(20),
 salario NUMBER(7,2));
 
 
 CREATE TABLE HOTEL
 (id_hotel NUMBER(4) CONSTRAINT hotel_cp PRIMARY KEY,
-localizacion VARCHAR2(20),
+localizacion VARCHAR2(30),
 aforoMax NUMBER(4),
-eventos VARCHAR2(30),
+eventos VARCHAR2(2),
 director NUMBER(5),
 CONSTRAINT hotel_cf_director FOREIGN KEY (director) REFERENCES PERSONAL(id_personal));
 
@@ -24,8 +24,8 @@ CONSTRAINT horasTrabj_cp PRIMARY KEY (id_personal, id_hotel));
 
 CREATE TABLE HABITACION
 (id_habitacion NUMBER(4) CONSTRAINT hab_cp PRIMARY KEY,
-tipoHab VARCHAR2(10),
-tipoBaño VARCHAR2(10),
+tipoHab VARCHAR2(15),
+tipoBaño VARCHAR2(15),
 cocina VARCHAR2(2),
 id_hotel NUMBER(4),
 CONSTRAINT habit_cp_hotel FOREIGN KEY (id_hotel) REFERENCES HOTEL(id_hotel));
