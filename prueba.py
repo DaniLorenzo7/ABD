@@ -98,7 +98,7 @@ while j<200:
     salario = np.random.choice(salarios)
     
     print("INSERT INTO PERSONAL VALUES(sqc_personal.NEXTVAL, '",
-        nombre,"','",apellido,"','",puesto,"','",salario,");"
+        nombre,"','",apellido,"','",puesto,"',",salario,");"
         )
 
     j+=1
