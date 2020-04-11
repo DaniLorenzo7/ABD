@@ -89,38 +89,39 @@ date= ''.join(aux_date)
 j=0
 
 ################# PERSONAL #################
-print("CREATE SEQUENCE sqc_personal INCREMENT BY 1 START WITH 1;")
-while j<200:
-    nombre = np.random.choice(nombres)
-    apellido = np.random.choice(lista_apellidos)
-    aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
-    puesto = ''.join(aux_puesto)
-    salario = np.random.choice(salarios)
+# print("CREATE SEQUENCE sqc_personal INCREMENT BY 1 START WITH 1;")
+# while j<200:
+#     nombre = np.random.choice(nombres)
+#     apellido = np.random.choice(lista_apellidos)
+#     aux_puesto = random.choices(population=puestos, weights=pesos_puesto, k=1)
+#     puesto = ''.join(aux_puesto)
+#     salario = np.random.choice(salarios)
     
-    print("INSERT INTO PERSONAL VALUES(sqc_personal.NEXTVAL, '",
-        nombre,"','",apellido,"','",puesto,"',",salario,");"
-        )
-
-    j+=1
-
-
-
-################# HOTEL #################
-# while j<127:
-#     localizacion = np.random.choice(localizaciones)
-#     aux_aforo_max = random.randint(100,400)
-#     aforo_max = str(aux_aforo_max)
-#     aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
-#     evento = ''.join(aux_evento)
-#     director = random.randint(1,120)
-
-#     print(localizacion,(20-len(localizacion))*" ",
-#         aforo_max,12*" ",
-#         evento,(15-len(evento))*" ",
-#         director,(10-len(str(director)))*" "
+#     print("INSERT INTO PERSONAL VALUES(sqc_personal.NEXTVAL, '",
+#         nombre,"','",apellido,"','",puesto,"',",salario,");"
 #         )
 
 #     j+=1
+
+
+
+################ HOTEL #################
+while j<127:
+    localizacion = np.random.choice(localizaciones)
+    aux_aforo_max = random.randint(100,400)
+    aforo_max = str(aux_aforo_max)
+    aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
+    evento = ''.join(aux_evento)
+    director = random.randint(1,120)
+
+    print(j+1, (5-len(str(j)))*" ",
+        localizacion,(20-len(localizacion))*" ",
+        aforo_max,12*" ",
+        evento,(15-len(evento))*" ",
+        director,(10-len(str(director)))*" "
+        )
+
+    j+=1
 
 
 
