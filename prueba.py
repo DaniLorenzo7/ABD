@@ -104,7 +104,7 @@ j=0
 #     j+=1
 
 
-
+i=1001
 ################ HOTEL #################
 while j<127:
     localizacion = np.random.choice(localizaciones)
@@ -112,16 +112,17 @@ while j<127:
     aforo_max = str(aux_aforo_max)
     aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
     evento = ''.join(aux_evento)
-    director = random.randint(1,120)
+    director = random.randint(10001,10200)
 
-    print(j+1, (5-len(str(j)))*" ",
-        localizacion,(20-len(localizacion))*" ",
-        aforo_max,12*" ",
-        evento,(15-len(evento))*" ",
-        director,(10-len(str(director)))*" "
+    print(i,
+        localizacion,(29-len(localizacion))*" ",
+        aforo_max,
+        evento,
+        director
         )
 
     j+=1
+    i+=1
 
 
 
