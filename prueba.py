@@ -104,52 +104,53 @@ j=0
 #     j+=1
 
 
-i=1001
+
 ################ HOTEL #################
-while j<127:
-    localizacion = np.random.choice(localizaciones)
-    aux_aforo_max = random.randint(100,400)
-    aforo_max = str(aux_aforo_max)
-    aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
-    evento = ''.join(aux_evento)
-    director = random.randint(10001,10200)
+# i=1001
+# while j<127:
+#     localizacion = np.random.choice(localizaciones)
+#     aux_aforo_max = random.randint(100,400)
+#     aforo_max = str(aux_aforo_max)
+#     aux_evento = random.choices(population=eventos_cocina, weights=pesos_eventos, k=1)
+#     evento = ''.join(aux_evento)
+#     director = random.randint(10001,10200)
 
-    print(i,
-        localizacion,(29-len(localizacion))*" ",
-        aforo_max,
-        evento,
-        director
-        )
+#     print(i,
+#         localizacion,(29-len(localizacion))*" ",
+#         aforo_max,
+#         evento,
+#         director
+#         )
 
-    j+=1
-    i+=1
+#     j+=1
+#     i+=1
 
 
 
 ################# HABITACION #################
-# id_hotel=0
-# while j<6000:
-#     id_hotel+=1
-#     num_habitaciones=[20, 30, 40, 50, 60, 70, 80];
-#     pesos_habitaciones=[0.1,0.15,0.2,0.2,0.2,0.1,0.05]
-#     aux=random.choices(population=num_habitaciones, weights=pesos_habitaciones, k=1)
-#     i=0
-#     if (id_hotel==127):
-#         aux[0]=6000-j
-#     while (i<aux[0] and j<6000):
-#         aux_tipo_habitacion = random.choices(population=tipos_habitaciones, weights=pesos_tipos_habitaciones, k=1)
-#         tipo_habitacion= ''.join(aux_tipo_habitacion)
-#         aux_tipo_baño = random.choices(population=tipos_baños, weights=pesos_tipos_baños, k=1)
-#         tipo_baño = ''.join(aux_tipo_baño)
-#         aux_cocina = random.choices(population=eventos_cocina, weights=pesos_cocina, k=1)
-#         cocina = ''.join(aux_cocina)
-#         print(tipo_habitacion,(15-len(tipo_habitacion))*" ",
-#         tipo_baño,(10-len(tipo_baño))*" ",
-#         cocina,12*" ",
-#         id_hotel,(7-len(str(id_hotel)))*" "
-#         )
-#         i+=1
-#         j+=1
+id_hotel=0
+while j<6000:
+    id_hotel+=1
+    num_habitaciones=[20, 30, 40, 50, 60, 70, 80];
+    pesos_habitaciones=[0.1,0.15,0.2,0.2,0.2,0.1,0.05]
+    aux=random.choices(population=num_habitaciones, weights=pesos_habitaciones, k=1)
+    i=0
+    if (id_hotel==127):
+        aux[0]=6000-j
+    while (i<aux[0] and j<6000):
+        aux_tipo_habitacion = random.choices(population=tipos_habitaciones, weights=pesos_tipos_habitaciones, k=1)
+        tipo_habitacion= ''.join(aux_tipo_habitacion)
+        aux_tipo_baño = random.choices(population=tipos_baños, weights=pesos_tipos_baños, k=1)
+        tipo_baño = ''.join(aux_tipo_baño)
+        aux_cocina = random.choices(population=eventos_cocina, weights=pesos_cocina, k=1)
+        cocina = ''.join(aux_cocina)
+        print(j+1, ",",tipo_habitacion,",",
+        tipo_baño,",",
+        cocina,",",
+        id_hotel
+        )
+        i+=1
+        j+=1
 
 
 ################# RESERVA #################
