@@ -170,8 +170,8 @@ while j<12000:
 
     id_habitacion = random.randint(1,6000)
 
-    print(j+1,(5-len(str(j)))*" ",
-        id_habitacion, (1-len(str(id_habitacion)))*" ",
+    print(j+1,(10-len(str(j)))*" ",
+        id_habitacion, (5-len(str(id_habitacion)))*" ",
         fecha_inicio,(10-len(fecha_inicio))*" ",
         fecha_fin,(10-len(fecha_fin))*" ",
         regimen
