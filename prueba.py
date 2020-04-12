@@ -128,14 +128,14 @@ j=0
 
 
 ################# HABITACION #################
-id_hotel=0
+id_hotel=1000
 while j<6000:
     id_hotel+=1
-    num_habitaciones=[20, 30, 40, 50, 60, 70, 80];
+    num_habitaciones=[20, 30, 40, 50, 60, 70, 80]
     pesos_habitaciones=[0.1,0.15,0.2,0.2,0.2,0.1,0.05]
     aux=random.choices(population=num_habitaciones, weights=pesos_habitaciones, k=1)
     i=0
-    if (id_hotel==127):
+    if (id_hotel==1127):
         aux[0]=6000-j
     while (i<aux[0] and j<6000):
         aux_tipo_habitacion = random.choices(population=tipos_habitaciones, weights=pesos_tipos_habitaciones, k=1)
